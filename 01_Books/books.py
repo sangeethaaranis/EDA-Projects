@@ -78,3 +78,6 @@ df.groupby("Publisher ")['publisher revenue'].sum().sort_values(ascending= True)
 
 # %%
 df.groupby("Author_Rating")["Book_ratings_count"].mean().sort_values(ascending= True)
+
+#%%
+df.groupby("language_code").size().sort_values(ascending=False)
