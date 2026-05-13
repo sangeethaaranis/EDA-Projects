@@ -13,7 +13,16 @@ books.head()
 books.describe()
 # %%
 #there is a negative value in publishing year
-books[books['Publishing Year'] < 0]
+df = books[books['Publishing Year'] > 0]
+print(df.describe())
 
-print(books.describe())
+# %%
+#checking for null values
+df.isnull().sum()
+
+# %%
+#we can ignore language code and delete book name empty empty rows
+df = df[df['Book Name'].notna()]
+df.isnull().sum()
+
 # %%
